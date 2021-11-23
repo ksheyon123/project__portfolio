@@ -1,29 +1,22 @@
 export const categoryFilter = [
   {
     id: 1,
-    name: "React",
-    link: "/lab/react",
-    key: "react",
+    name: "Main",
+    link: "/",
+    key: "main",
   },
   {
     id: 2,
     name: "Javascript",
-    link: "/lab/js",
+    link: "/js",
     key: "js"
   },
-
-  {
-    id: 3,
-    name: "Hyperledger Indy",
-    link: "/lab/hyperledger",
-    key: "hyperledger"
-  }
 ];
 
 export const _subcategoryFilter = [
   {
-    id: "react",
-    name: "Hooks",
+    id: "js",
+    name: "React",
     link: "?item=react__1"
   }
 ]
