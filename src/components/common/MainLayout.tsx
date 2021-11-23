@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { RNB } from "./RNB";
 
 const StyledMainLayout = styled.main`
 display: flex;
@@ -26,6 +27,7 @@ const MainLayout: React.FC = ({ children }) => {
       <StyledWrapper>
         {children}
       </StyledWrapper>
+      <RNB />
     </StyledMainLayout>
   )
 }
