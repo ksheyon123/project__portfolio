@@ -19,4 +19,4 @@ export const _subcategoryFilter = [
     name: "React",
     link: "?item=react__1"
   }
-]
+];
