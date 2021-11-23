@@ -1,8 +1,8 @@
-import { readBuilderProgram } from "typescript";
-
 const theme = {
-  font: "Noto Sans",
+  font: "Noto Sans KR",
+
   mono1: "rgb(255, 255, 255)",
+  monoBg: "rgb(244, 244, 244)",
   mono2Divider: " #EBEBEB",
   mono6: "rgb(34, 34, 34)",
 
@@ -10,4 +10,4 @@ const theme = {
     "font-size": "16px"
   }
 }
-export { theme };
+export default theme;

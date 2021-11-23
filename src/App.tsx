@@ -4,7 +4,8 @@ import {
   Route
 } from "react-router-dom"
 import {
-  MainContainer
+  MainContainer,
+
 } from "./components"
 import {
   PageChanger
@@ -12,7 +13,7 @@ import {
 import {
   BaseTemplate,
   MainPage,
-  LaboratoryPage
+  SubjectPage
 } from "./pages/index";
 import "./styles/global.css";
 
@@ -36,7 +37,7 @@ const Routes = () => {
       }
       <MainContainer>
         <Route exact path="/" component={MainPage} />
-        <Route path="/lab" component={LaboratoryPage} />
+        <Route exact path="/subject" component={SubjectPage} />
       </MainContainer>
     </Switch>
   );

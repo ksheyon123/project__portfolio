@@ -1,9 +1,9 @@
 import { BaseTemplate } from "./BaseTemplate";
 import { MainPage } from "./MainPage";
-import { LaboratoryPage } from "./LaboratoryPage";
+import { SubjectPage } from "./SubjectPage";
 
 export {
   BaseTemplate,
   MainPage,
-  LaboratoryPage
+  SubjectPage
 }
