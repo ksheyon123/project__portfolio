@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-
+import { useRecoilState } from "recoil";
 import {
   navList
 } from "../../constants/navData";
 import {
   NavProps
 } from "../../constants/_types";
+import {
+  searchKeywordState
+} from "../../states/_gState";
 
 const StyledHeader = styled.header`
   position : fixed;
@@ -35,6 +38,7 @@ const StyledHeader = styled.header`
   & > div > div:last-of-type {
     position : absolute;
     right : 20px;
+    
     &::before {
         content : "-";
         font-size: 20px;
@@ -46,10 +50,19 @@ const StyledHeader = styled.header`
       margin : 0;
       
     }
+    & input {
+      width : 150px;
+      border-radius: 20px;
+      padding : 10px 0px 10px 30px;
+      border : 1px solid #BEB;
+      margin-right : 10px;
+      
+    }
   }
 `;
 
 const Header: React.FC = () => {
+  const [searchKeyword, setSearchKeyword] = useRecoilState(searchKeywordState);
   return (
     <StyledHeader>
       <div>
@@ -58,6 +71,11 @@ const Header: React.FC = () => {
           My Side Rendering
         </div>
         <div>
+          <input
+            placeholder="Search"
+            value={searchKeyword}
+            onChange={(e) => setSearchKeyword(e.target.value)}
+          />
           <ul>
             {
               navList.sort((a, b) => a.order - b.order).map((el: NavProps) => {

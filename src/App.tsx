@@ -7,7 +7,6 @@ import {
   MainContainer,
 } from "./components"
 import {
-  BaseTemplate,
   MainPage,
   SubjectPage
 } from "./pages/index";
@@ -16,9 +15,7 @@ import {
   ROUTES
 } from "./constants/index";
 
-
 const Routes = () => {
-
   return (
     <Switch>
       <MainContainer>

@@ -7,7 +7,7 @@ import {
 } from "recoil";
 import {
   toggleParams
-} from "../states/GlobalState";
+} from "../states/_gState";
 import {
   orderedState
 } from "../states/_gSelector";

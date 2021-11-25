@@ -1,20 +1,29 @@
+interface CategoryProps {
+  id: number;
+  name: string;
+  category: number;
+}
+
 export const ROUTES = {
   MAIN: "/",
   JAVASCRIPT: "/js",
   BLOCKCHAIN: "/bc",
 }
 
-export const categoryFilter = [
+export const categoryFilter: CategoryProps[] = [
   {
     id: 1,
-    name: "Main",
-    link: "/",
-    key: "main",
+    name: "React",
+    category: 2,
   },
   {
     id: 2,
-    name: "Javascript",
-    link: "/js",
-    key: "js"
+    name: "VanillaJS",
+    category: 2,
+  },
+  {
+    id: 2,
+    name: "Hyperledger",
+    category: 3,
   },
 ];
