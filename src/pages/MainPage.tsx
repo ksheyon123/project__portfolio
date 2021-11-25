@@ -9,12 +9,15 @@ import {
   toggleParams
 } from "../states/GlobalState";
 import {
+  orderedState
+} from "../states/_gSelector";
+import {
   CardListParams
 } from "../states/Main/_state";
 
 const MainPage: React.FC = () => {
   const list = useRecoilValue(toggleParams);
-  const cardList = useRecoilValue(CardListParams);
+  const cardList = useRecoilValue(orderedState);
 
   return (
     <>

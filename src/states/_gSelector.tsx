@@ -11,20 +11,18 @@ import {
 
 // If toggleParams[0]`s isSelected === true, arrange card list to latest.
 // If toggleParams[1]`s isSelected === true, arrange rate.
-export const toggleSelector = selector<any>({
-  key: "toggleSelector",
+export const orderedState = selector<any>({
+  key: "orderedState",
   get: ({ get }) => {
-    get(toggleParams);
-  },
-  set: ({ get, set }, newValue) => {
-    const a = get(toggleParams);
-    console.log("a", a);
-    a.map((el) => {
-      if (el.isSelected)
-        return {
-          ...el,
+    const params = get(toggleParams);
+    const cardList = get(CardListParams);
+    const rawArray = [...cardList];
 
-        }
-    })
+    if (params[0].isSelected === true) {
+      return rawArray.sort((a, b) => { return a.created - b.created });
+    }
+    if (params[1].isSelected === true) {
+      return rawArray.sort((a, b) => a.rate - b.rate);
+    }
   }
-})
+});

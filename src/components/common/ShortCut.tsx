@@ -41,7 +41,6 @@ const ShortCut: React.FC<Props> = (props) => {
     list,
   } = props;
   const setList = useSetRecoilState(toggleParams);
-
   const toggleShortcut = (idx: number) => {
     const newList = list.map(el => {
       return {

@@ -1,3 +1,9 @@
+export const ROUTES = {
+  MAIN: "/",
+  JAVASCRIPT: "/js",
+  BLOCKCHAIN: "/bc",
+}
+
 export const categoryFilter = [
   {
     id: 1,
@@ -11,12 +17,4 @@ export const categoryFilter = [
     link: "/js",
     key: "js"
   },
-];
-
-export const _subcategoryFilter = [
-  {
-    id: "js",
-    name: "React",
-    link: "?item=react__1"
-  }
 ];

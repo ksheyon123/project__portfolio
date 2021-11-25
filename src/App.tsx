@@ -12,14 +12,19 @@ import {
   SubjectPage
 } from "./pages/index";
 import "./styles/global.css";
+import {
+  ROUTES
+} from "./constants/index";
+
 
 const Routes = () => {
 
   return (
     <Switch>
       <MainContainer>
-        <Route exact path="/" component={MainPage} />
-        <Route exact path="/subject" component={SubjectPage} />
+        <Route exact path={ROUTES.MAIN} component={MainPage} />
+        <Route exact path={ROUTES.JAVASCRIPT} component={SubjectPage} />
+        <Route exact path={ROUTES.BLOCKCHAIN} component={SubjectPage} />
       </MainContainer>
     </Switch>
   );

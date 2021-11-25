@@ -49,4 +49,4 @@ export const CardListParams = atom<CardProps[]>({
       rate: 111,
     }
   ]
-})
+});

@@ -1,6 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+
+import {
+  navList
+} from "../../constants/navData";
+import {
+  NavProps
+} from "../../constants/_types";
+
 const StyledRNB = styled.aside`
   width : 15rem;
   & div {
@@ -25,16 +33,25 @@ const StyledRNB = styled.aside`
 
 const RNB: React.FC = () => {
   const history = useHistory();
+  const rawList = [...navList];
+
   return (
     <StyledRNB>
       <div>
         <ul>
-          <li>
-            <nav onClick={() => history.push("/")}>Main</nav>
-          </li>
-          <li>
-            <nav onClick={() => history.push("/subject")}>Subject</nav>
-          </li>
+          {
+            navList.sort((a, b) => a.order - b.order).map((el: NavProps) => {
+              const {
+                name,
+                route
+              } = el;
+              return (
+                <li>
+                  <nav onClick={() => history.push(route)}>{name}</nav>
+                </li>
+              )
+            })
+          }
         </ul>
       </div>
     </StyledRNB>
