@@ -8,8 +8,6 @@ interface Props {
     link: string
   }[];
   width?: number;
-  isVertical?: boolean;
-  isSubject?: boolean;
 }
 
 const View = styled.div`
@@ -27,7 +25,7 @@ const View = styled.div`
   }
 `
 
-const ListView: React.FC<Props> = (props) => {
+const CategorySelector: React.FC<Props> = (props) => {
   const {
     list,
   } = props;
@@ -54,4 +52,4 @@ const ListView: React.FC<Props> = (props) => {
   )
 }
 
-export { ListView };
+export { CategorySelector };

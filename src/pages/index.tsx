@@ -1,9 +1,11 @@
 import { BaseTemplate } from "./BaseTemplate";
 import { MainPage } from "./MainPage";
-import { SubjectPage } from "./SubjectPage";
+import { ListViewPage } from "./ListViewPage";
+import { AboutPage } from "./AboutPage";
 
 export {
   BaseTemplate,
   MainPage,
-  SubjectPage
+  ListViewPage,
+  AboutPage
 }

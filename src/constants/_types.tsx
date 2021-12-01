@@ -5,3 +5,9 @@ export interface NavProps {
   route: string;
   category: number;
 }
+
+export interface CategoryProps {
+  id: number;
+  name: string;
+  category: number;
+}

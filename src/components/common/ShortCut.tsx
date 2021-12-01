@@ -5,7 +5,7 @@ import {
 } from "recoil";
 import {
   toggleParams
-} from "../../states/_gState";
+} from "../../states/_recoilState";
 import theme from "../../styles/theme";
 
 const StyledShortCut = styled.div`

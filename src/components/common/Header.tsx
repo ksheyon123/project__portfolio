@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { useRecoilState } from "recoil";
 import {
   navList
-} from "../../constants/navData";
+} from "../../constants/_navigations";
 import {
   NavProps
 } from "../../constants/_types";
 import {
   searchKeywordState
-} from "../../states/_gState";
+} from "../../states/_recoilState";
 
 const StyledHeader = styled.header`
   position : fixed;
