@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const StyledCardBoard = styled.div`
   display: grid;
   box-sizing :border-box;
-  width : 800px;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
   row-gap: 20px;

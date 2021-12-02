@@ -13,7 +13,8 @@ import {
 import {
   cardArr,
   toggleArr,
-  itemArr
+  itemArr,
+  contentArr
 } from "../constants/dummies";
 
 
@@ -50,4 +51,14 @@ export const itmeArrState = atom<ItemProps[]>({
 export const itemKeyState = atom<string>({
   key: "itemKeyState",
   default: ""
+});
+
+export const contentArrState = atom<any[]>({
+  key: 'contentArrState',
+  default: contentArr,
+});
+
+export const contentState = atom<any>({
+  key: "contentState",
+  default: {}
 })

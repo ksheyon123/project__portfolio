@@ -40,15 +40,33 @@ export const categoryFilter = [
   },
   {
     id: 2,
+    name: "Recoil",
+    _pKey: "recoil",
+    _fKey: 2,
+  },
+  {
+    id: 3,
     name: "VanillaJS",
     _pKey: "vjs",
     _fKey: 2,
 
   },
   {
-    id: 2,
+    id: 4,
     name: "Hyperledger",
     _pKey: "hldr",
+    _fKey: 3,
+  },
+  {
+    id: 5,
+    name: "Solidity",
+    _pKey: "sol",
+    _fKey: 3,
+  },
+  {
+    id: 6,
+    name: "Concept",
+    _pKey: "concept",
     _fKey: 3,
   },
 ];

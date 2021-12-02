@@ -39,17 +39,34 @@ const toggleArr = [
 const itemArr = [
   {
     title: "Hooks",
+    _pKey: "hooks",
     _fKey: "rc",
   },
   {
     title: "HOC (High Order Component)",
+    _pKey: "hoc",
     _fKey: "rc",
   },
 ];
 
 
+const contentArr = [
+  {
+    _fKey: "hooks",
+    title: "React Hooks에 대하여",
+    introduction: "이번 페이지에서는 React Hooks과 사용법에 대해서 알아보겠습니다.",
+    keyword: ["React"],
+    created: new Date("2021/09/10 14:24").valueOf(),
+    writer: ["KangSeohyeon"],
+    desc: `
+      <h1></h1>
+    `
+  }
+]
+
 export {
   cardArr,
   toggleArr,
-  itemArr
+  itemArr,
+  contentArr
 }

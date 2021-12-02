@@ -2,7 +2,6 @@ import React from "react";
 import {
   useHistory,
   useLocation,
-  Link
 } from "react-router-dom";
 import {
   Column
@@ -46,7 +45,10 @@ const List: React.FC<Props> = (props: any) => {
               <div
                 key={idx.toString()}
                 className="box"
-                onClick={() => history.push(`${pathname}/${el.itemId}`)}
+                onClick={() => history.push({
+                  pathname: `${pathname}/${el._pKey}`,
+                  state: el._pKey
+                })}
               >
                 {el.title}
               </div>

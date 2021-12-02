@@ -6,9 +6,3 @@ export interface NavProps {
   _pKey: number;
 }
 
-export interface CategoryProps {
-  id: number;
-  name: string;
-  _fKey: number;
-  _pKey: string;
-}
