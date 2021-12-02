@@ -78,7 +78,7 @@ const Header: React.FC = () => {
           />
           <ul>
             {
-              navList.sort((a, b) => a.order - b.order).map((el: NavProps) => {
+              navList.sort((a, b) => a.order - b.order).map((el) => {
                 const {
                   name
                 } = el;

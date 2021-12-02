@@ -8,7 +8,7 @@ import {
   useRecoilValue
 } from "recoil";
 import {
-  toggleParams
+  toggleState
 } from "../states/_recoilState";
 import {
   orderedState
@@ -16,7 +16,7 @@ import {
 
 
 const MainPage: React.FC = () => {
-  const list = useRecoilValue(toggleParams);
+  const list = useRecoilValue(toggleState);
   const cardList = useRecoilValue(orderedState);
 
   return (

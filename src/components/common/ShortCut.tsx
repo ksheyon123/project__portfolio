@@ -4,7 +4,7 @@ import {
   useSetRecoilState
 } from "recoil";
 import {
-  toggleParams
+  toggleState
 } from "../../states/_recoilState";
 import theme from "../../styles/theme";
 
@@ -40,7 +40,7 @@ const ShortCut: React.FC<Props> = (props) => {
   const {
     list,
   } = props;
-  const setList = useSetRecoilState(toggleParams);
+  const setList = useSetRecoilState(toggleState);
   const toggleShortcut = (idx: number) => {
     const newList = list.map(el => {
       return {

@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
-interface Props {
-  list: {
-    id: number | string;
-    name: string;
-    link: string
-  }[];
-  width?: number;
-}
+import {
+  CategoryProps
+} from "../../states/_types";
 
 const View = styled.div`
   display: flex;
@@ -25,9 +19,16 @@ const View = styled.div`
   }
 `
 
+interface Props {
+  list: CategoryProps[];
+  width?: number;
+  setKey: (e: any) => void;
+}
+
 const CategorySelector: React.FC<Props> = (props) => {
   const {
     list,
+    setKey
   } = props;
   const [curIdx, setCurIdx] = useState<number>(0);
 
@@ -35,10 +36,16 @@ const CategorySelector: React.FC<Props> = (props) => {
     <View>
       {
         list.map((el, idx) => {
+          const {
+            _pKey
+          } = el;
           return (
             <div
               className={idx === curIdx ? "item active" : "item"}
-              onClick={() => setCurIdx(idx)}
+              onClick={() => {
+                setCurIdx(idx);
+                setKey(_pKey)
+              }}
               key={idx.toString()}
             >
               {

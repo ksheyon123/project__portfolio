@@ -23,27 +23,25 @@ const StyledList = styled.div`
   & > div:last-of-type {
     margin-bottom: 0px;
   }
-`
+`;
 
-const List: React.FC = () => {
+interface Props {
+  list: any[];
+}
+
+const List: React.FC<Props> = (props: any) => {
+  const {
+    list
+  } = props;
+
   const history = useHistory();
   const { pathname } = useLocation();
-  const list = [
-    {
-      title: 'Hello World',
-      itemId: "item__1"
-    },
-    {
-      title: 'Hello World2',
-      itemId: "item__2"
-    }
-  ]
 
   return (
     <Column>
       <StyledList>
         {
-          list.map((el, idx) => {
+          list.map((el: any, idx: any) => {
             return (
               <div
                 key={idx.toString()}

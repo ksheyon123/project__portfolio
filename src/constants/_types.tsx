@@ -3,11 +3,12 @@ export interface NavProps {
   key: string;
   name: string;
   route: string;
-  category: number;
+  _pKey: number;
 }
 
 export interface CategoryProps {
   id: number;
   name: string;
-  category: number;
+  _fKey: number;
+  _pKey: string;
 }
