@@ -11,17 +11,9 @@ import {
   CategoryProps
 } from "./_types";
 import {
-  cardArr,
   toggleArr,
-  itemArr,
   contentArr
 } from "../constants/dummies";
-
-
-export const cardArrState = atom<CardProps[]>({
-  key: "mainPage__cardListParams",
-  default: cardArr
-});
 
 export const toggleState = atom<ShortcutProps[]>({
   key: "globalState__toggleState",
@@ -41,11 +33,6 @@ export const categoryArrState = atom<CategoryProps[]>({
 export const searchKeywordState = atom<string>({
   key: "globalState__searchKeywordState",
   default: "",
-});
-
-export const itmeArrState = atom<ItemProps[]>({
-  key: "itemListState",
-  default: itemArr
 });
 
 export const itemKeyState = atom<string>({

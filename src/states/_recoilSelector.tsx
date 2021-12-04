@@ -5,12 +5,12 @@ import {
 import {
 } from './_recoilState';
 import {
-  cardArrState,
   toggleState,
   categoryArrState,
   navigationCategory,
-  itmeArrState,
-  itemKeyState
+  contentArrState,
+  itemKeyState,
+  contentState
 } from "./_recoilState";
 import {
   ascendingOrder
@@ -23,7 +23,7 @@ export const orderedState = selector<any>({
   key: "orderedState",
   get: ({ get }) => {
     const params = get(toggleState);
-    const cardList = get(cardArrState);
+    const cardList = get(contentArrState);
     const rawArray = [...cardList];
 
     if (params[0].isSelected === true) {
@@ -48,7 +48,7 @@ export const subcategoryFilter = selector<any>({
 export const itemFilter = selector<any>({
   key: "itemFilter",
   get: ({ get }) => {
-    const items = get(itmeArrState);
+    const items = get(contentArrState);
     const key = get(itemKeyState);
     console.log("items", items);
     console.log("key", key);
@@ -57,3 +57,15 @@ export const itemFilter = selector<any>({
     return newArr;
   }
 });
+
+export const contentFilter = selector<any>({
+  key: "contentFilter",
+  get: ({ get }) => {
+    return get(contentState);
+  },
+  set: ({ set, get }, newValue) => {
+    const contentArr = get(contentArrState);
+    const filteredContent = contentArr.find((el) => el._pKey === newValue);
+    set(contentState, filteredContent);
+  }
+})
