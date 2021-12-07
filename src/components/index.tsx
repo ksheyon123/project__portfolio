@@ -11,6 +11,7 @@ import { ViewMore } from "./common/ViewMore";
 import { Flex } from "./common/Flex";
 import { List } from "./common/List";
 import { Title } from "./common/Title";
+import { Indent } from "./common/Indent";
 
 export {
   MainContainer,
@@ -25,5 +26,6 @@ export {
   ViewMore,
   Flex,
   List,
-  Title
+  Title,
+  Indent
 }

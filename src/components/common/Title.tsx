@@ -1,10 +1,30 @@
 import React from "react";
+import styled from 'styled-components';
 
-const Title: React.FC = () => {
+const StyledTitle = styled.div`
+  width : 100%;
+  padding : 10px;
+  font-size : 24px;
+  font-weight: bold;
+  background-color: #FFF;
+  box-sizing: border-box;
+`;
+
+const Title: React.FC<{ title: string }> = (props) => {
+  const {
+    title = ""
+  } = props;
+
   return (
-    <div>
-
-    </div>
+    <StyledTitle>
+      {title.split("\n").map(el => {
+        return (
+          <>
+            {el} <br />
+          </>
+        )
+      })}
+    </StyledTitle>
   )
 }
 

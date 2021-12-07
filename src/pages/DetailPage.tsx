@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import {
   useLocation
 } from "react-router-dom";
 import {
-  Column
-} from "../components/common/Column";
+  Column,
+  Title,
+  Indent
+} from "../components/index";
 import {
   useRecoilValue,
   useRecoilState,
@@ -17,9 +20,17 @@ import {
   contentFilter
 } from "../states/_recoilSelector";
 
+const Content = styled.div`
+  width : 100%;
+  box-sizing: border-box;
+  padding : 10px;
+`;
+
 const DetailPage: React.FC = () => {
   const { state } = useLocation();
   const [content, setNewContent] = useRecoilState(contentFilter);
+  const [onBoarding, setOnBoarding] = useState<boolean>(true);
+
   const {
     title,
     desc,
@@ -32,28 +43,30 @@ const DetailPage: React.FC = () => {
 
   useEffect(() => {
     setNewContent(state);
+    setOnBoarding(false);
   }, [state]);
+
+  if (onBoarding) {
+    return (
+      <div></div>
+    )
+  }
 
   return (
     <Column>
-      <div>
-        {title}
+      <Content>
+        <Title title={title} />
+        <Indent writer={writer} date={created} keyword={keyword} />
+        <div>
+          introduction
       </div>
-      <div>
-        {created}
+        <div>
+          Keyword
       </div>
-      <div>
-        writer
+        <div>
+          Footer
       </div>
-      <div>
-        introduction
-      </div>
-      <div>
-        Keyword
-      </div>
-      <div>
-        Footer
-      </div>
+      </Content>
     </Column>
   )
 }
