@@ -5,14 +5,13 @@ const StyledPage = styled.div`
   // 1920px
   width : 100vw;
   height : 100vh;
-
   & > div.container {
     width : 1200px;
     height: 100%;
     margin : 0 auto;
   }
   // 960px
-  @media screen and (max-width : 960px) {
+  @media screen and (max-width : 1200px) {
     & > div.container {
       width : 960px;
       height: 100%;
@@ -20,7 +19,14 @@ const StyledPage = styled.div`
     }
   }
   // 375px
-  @media screen and (max-width : 375px) {
+  @media screen and (max-width : 960px) {
+    & > div.container {
+      width : 600px;
+      height: 100%;
+      margin : 0 auto;
+    }
+  }
+  @media screen and (max-width : 420px) {
     & > div.container {
       width : 375px;
       height: 100%;
