@@ -9,14 +9,14 @@ const StyledHeader = styled.div`
   border-bottom : 1px solid #AAA;
   & > div.container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     width : 1200px;
     height : 100%;
-    padding : 0px 15px;
     margin : 0 auto;
+    padding : 0px 20px;
     & > div.menu-area {
-      display: flex;
+      display: none;
       justify-content: center;
       & > img {
         width : 32px;
@@ -41,18 +41,114 @@ const StyledHeader = styled.div`
   }
   @media screen and (max-width : 1200px) {
     & > div.container {
+      position : relative;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
       width :800px;
       margin : 0 auto;
+      & > div.menu-area {
+        display: flex;
+        justify-content: center;
+        & > img {
+          width : 32px;
+          height : 32px;
+          cursor: pointer;
+        }
+      }
+      & > div.link-area {
+        position: absolute;
+        left : 0px;
+        top : 60px;
+        & > ul {
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          padding : 0px;
+          margin : 0px;
+          width : 300px;
+          & > li {
+            padding : 20px;
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
+  @media screen and (max-width : 800px) {
+    & > div.container {
+      position : relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width :420px;
+      margin : 0 auto;
+      & > div.menu-area {
+        display: flex;
+        justify-content: center;
+        & > img {
+          width : 32px;
+          height : 32px;
+          cursor: pointer;
+        }
+      }
+      & > div.link-area {
+        position: absolute;
+        left : 0px;
+        top : 60px;
+        & > ul {
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          padding : 0px;
+          margin : 0px;
+          width : 300px;
+          & > li {
+            padding : 20px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
   @media screen and (max-width : 420px) {
     & > div.container {
+      position : relative;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
       width :375px;
       margin : 0 auto;
+      & > div.menu-area {
+        display: flex;
+        justify-content: center;
+        & > img {
+          width : 32px;
+          height : 32px;
+          cursor: pointer;
+        }
+      }
+      & > div.link-area {
+        position: absolute;
+        left : 0px;
+        top : 60px;
+        & > ul {
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          padding : 0px;
+          margin : 0px;
+          width : 300px;
+          & > li {
+            padding : 20px;
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 `;

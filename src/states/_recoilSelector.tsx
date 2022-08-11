@@ -6,7 +6,6 @@ import {
 } from './_recoilState';
 import {
   toggleState,
-  categoryArrState,
   navigationCategory,
   contentArrState,
   itemKeyState,
@@ -34,16 +33,6 @@ export const orderedState = selector<any>({
     }
   }
 });
-
-export const subcategoryFilter = selector<any>({
-  key: "subcategoryFilter",
-  get: ({ get }) => {
-    const categorArr = get(categoryArrState);
-    const navCategory = get(navigationCategory);
-    const newArr = categorArr.filter((el: any) => navCategory === el._fKey);
-    return newArr;
-  }
-})
 
 export const itemFilter = selector<any>({
   key: "itemFilter",

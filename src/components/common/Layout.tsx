@@ -9,19 +9,21 @@ const StyledPage = styled.div`
     width : 1200px;
     height: 100%;
     margin : 0 auto;
+    border : 1px solid #AAA;
+    padding-top : 60px;
   }
   // 960px
   @media screen and (max-width : 1200px) {
     & > div.container {
-      width : 960px;
+      width : 800px;
       height: 100%;
       margin : 0 auto;
     }
   }
   // 375px
-  @media screen and (max-width : 960px) {
+  @media screen and (max-width : 800px) {
     & > div.container {
-      width : 600px;
+      width : 420px;
       height: 100%;
       margin : 0 auto;
     }
@@ -35,11 +37,11 @@ const StyledPage = styled.div`
   }
 `;
 
-const Layout: React.FC = () => {
+const Layout: React.FC = ({ children }) => {
   return (
     <StyledPage>
       <div className="container">
-
+        {children}
       </div>
     </StyledPage>
   )

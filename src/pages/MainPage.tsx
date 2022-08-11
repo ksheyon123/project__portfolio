@@ -1,22 +1,31 @@
 import React from "react";
+import styled from "styled-components";
 import {
   useRecoilValue
 } from "recoil";
-import {
-  toggleState
-} from "../states/_recoilState";
-import {
-  orderedState
-} from "../states/_recoilSelector";
 
+
+const StyledPage = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  grid-column-gap: 10px;
+  padding : 10px;
+`;
 
 const MainPage: React.FC = () => {
-  const list = useRecoilValue(toggleState);
-  const cardList = useRecoilValue(orderedState);
 
   return (
-    <>
-    </>
+    <StyledPage>
+      <div>
+        a
+      </div>
+      <div>
+        a
+      </div>
+      <div>
+        a
+      </div>
+    </StyledPage>
   )
 }
 
