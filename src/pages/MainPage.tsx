@@ -1,10 +1,5 @@
 import React from "react";
 import {
-  ShortCut,
-  CardBoard,
-  Column,
-} from "../components/index";
-import {
   useRecoilValue
 } from "recoil";
 import {
@@ -20,11 +15,8 @@ const MainPage: React.FC = () => {
   const cardList = useRecoilValue(orderedState);
 
   return (
-    <Column>
-      <ShortCut list={list} />
-      <CardBoard list={cardList} />
-    </Column>
-
+    <>
+    </>
   )
 }
 

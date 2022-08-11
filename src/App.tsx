@@ -1,33 +1,20 @@
-import { useEffect } from "react";
 import {
-  Switch,
+  Routes,
   Route
-} from "react-router-dom"
-import {
-  MainContainer,
-} from "./components"
+} from "react-router-dom";
 import {
   MainPage,
-  ListViewPage,
-  AboutPage
-} from "./pages/index";
-import "./styles/global.css";
+} from "src/pages/index";
 import {
   ROUTES
-} from "./constants/index";
-import { DetailPage } from "./pages/DetailPage";
+} from "src/constants/index";
 
-const Routes = () => {
+const Router = () => {
   return (
-    <Switch>
-      <MainContainer>
-        <Route exact path={ROUTES.MAIN} component={MainPage} />
-        <Route exact path={`${ROUTES.MAIN}:id`} component={ListViewPage} />
-        <Route path={`${ROUTES.MAIN}:id/:item`} component={DetailPage} />
-        <Route exact path={ROUTES.ABOUT} component={AboutPage} />
-      </MainContainer>
-    </Switch>
+    <Routes>
+      <Route path={ROUTES.MAIN} element={<MainPage />} />
+    </Routes>
   );
 }
 
-export default Routes;
+export default Router;
