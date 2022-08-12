@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, RefObject, useRef } from "react";
 import styled from "styled-components";
+import useOutsideClick from "src/hooks/useOutsideClick";
+import { classNameBinder } from "src/utils/index";
 import ic_menu from "src/assets/01-icon-24-px-menu@2x.png";
 
 const StyledHeader = styled.div`
@@ -151,16 +153,50 @@ const StyledHeader = styled.div`
       }
     }
   }
+  @media screen and (max-width : 1200px) {
+    .link-area {
+      display: none;
+      &.active {
+        display : block;
+      }
+    }
+  }
+  @media screen and (max-width : 800px) {
+    .link-area {
+      display: none;
+      &.active {
+        display : block;
+      }
+    }
+  }
+  @media screen and (max-width : 420px) {
+    .link-area {
+      display: none;
+      &.active {
+        display : block;
+      }
+    }
+  }
 `;
 const Header: React.FC = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
+  const divRef = useRef<HTMLDivElement>();
+  useOutsideClick(divRef, () => setToggle(false));
 
   return (
     <StyledHeader>
       <div className="container">
         <div className="menu-area">
-          <img src={ic_menu} alt="menu" />
+          <img
+            onClick={() => setToggle(!toggle)}
+            src={ic_menu}
+            alt="menu"
+          />
         </div>
-        <div className="link-area">
+        <div
+          ref={divRef as RefObject<HTMLDivElement>}
+          className={classNameBinder("link-area", "active", toggle)}
+        >
           <ul>
             <li>
               Main
