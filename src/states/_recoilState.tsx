@@ -3,17 +3,7 @@ import {
 } from 'recoil';
 import {
   ShortcutProps,
-  CategoryProps
 } from "./_types";
-import {
-  toggleArr,
-  contentArr
-} from "../constants/dummies";
-
-export const toggleState = atom<ShortcutProps[]>({
-  key: "globalState__toggleState",
-  default: toggleArr
-});
 
 export const navigationCategory = atom<number>({
   key: "globalState__navigationCategory",
@@ -30,10 +20,6 @@ export const itemKeyState = atom<string>({
   default: ""
 });
 
-export const contentArrState = atom<any[]>({
-  key: 'contentArrState',
-  default: contentArr,
-});
 
 export const contentState = atom<any>({
   key: "contentState",

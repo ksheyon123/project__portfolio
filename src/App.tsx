@@ -1,11 +1,11 @@
 import React, { ReactNode } from "react";
-
 import {
   Routes,
   Route
 } from "react-router-dom";
 import { Layout, Header } from "src/components/index";
 import {
+  DetailPage,
   MainPage,
 } from "src/pages/index";
 import {
@@ -27,10 +27,17 @@ const Router = () => {
   return (
     <Routes>
       <Route
-        path={ROUTES.MAIN}
+        path={ROUTES.HOME}
         element={
           <Wrapper>
             <MainPage />
+          </Wrapper>
+        } />
+      <Route
+        path={ROUTES.DETAIL}
+        element={
+          <Wrapper>
+            <DetailPage />
           </Wrapper>
         } />
     </Routes>

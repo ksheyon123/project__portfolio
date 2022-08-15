@@ -85,7 +85,7 @@ const StyledHeader = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      width :420px;
+      width :600px;
       margin : 0 auto;
       & > div.menu-area {
         display: flex;
@@ -199,7 +199,7 @@ const Header: React.FC = () => {
         >
           <ul>
             <li>
-              Main
+              Home
             </li>
             <li>
               Contact
