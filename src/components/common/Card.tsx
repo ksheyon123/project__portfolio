@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-
+import { CardType } from 'src/constants/types';
 interface IProps {
-  icon?: string;
+  item: CardType;
 }
 
 const StyledCard = styled.div`
@@ -14,10 +14,18 @@ const StyledCard = styled.div`
     display : flex;
     border-bottom: 1px solid #AAA;
     & > div.img-area {
+      display : flex;
+      justify-content:center ;
+      align-items: center;
       width : 140px;
       height : 140px;
       border-radius : 8px;
-      border : 1px solid #AAA;
+      overflow : hidden;
+      & > img {
+        width : 160px;
+        height : 160px;
+        filter : blur(0.5px)
+      }
     }
     & > div.desc-area {
       width : calc(100% - 120px);
@@ -72,20 +80,27 @@ const StyledCard = styled.div`
   }
 `;
 
-const Card: React.FC<IProps> = (props) => {
+const Card: React.FC<IProps> = ({ item }) => {
 
   const {
-
-  } = props;
+    icon,
+    title,
+    tags,
+    desc,
+    st,
+    en
+  } = item;
 
   return (
     <StyledCard>
       <div className="content-area">
-        <div className="img-area" />
+        <div className="img-area">
+          <img src={icon} />
+        </div>
         <div className="header-area"></div>
         <div className="desc-area">
           <div className="title-txt">
-            Title
+            <span>{title}</span>
           </div>
           <div className="tags">
             <div>React</div>

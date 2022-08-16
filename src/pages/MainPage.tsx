@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {
   useRecoilValue
 } from "recoil";
+import { items } from "src/constants/items";
 import { Card } from "src/components/index";
 
 
@@ -20,9 +21,13 @@ const MainPage: React.FC = () => {
 
   return (
     <StyledPage>
-      <Card />
-      <Card />
-      <Card />
+      {items.map((el) => {
+        return (
+          <Card
+            item={el}
+          />
+        )
+      })}
     </StyledPage>
   )
 }
