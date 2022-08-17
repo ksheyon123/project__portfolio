@@ -9,6 +9,7 @@ const StyledCard = styled.div`
   width : 100%;
   border-radius : 8px;
   border : 1px solid #AAA;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   & > div.content-area {
     display : flex;
@@ -21,10 +22,15 @@ const StyledCard = styled.div`
       height : 140px;
       border-radius : 8px;
       overflow : hidden;
+      padding :10px;
       & > img {
-        width : 160px;
-        height : 160px;
-        filter : blur(0.5px)
+        width: auto;
+          height: auto;
+          max-width : 120px;
+          max-height : 120px; 
+          aspect-ratio: auto;
+        border-radius: 8px;
+        box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.08);
       }
     }
     & > div.desc-area {
@@ -68,6 +74,47 @@ const StyledCard = styled.div`
       & > div.img-area {
         width : 100%;
         height : 240px;
+        margin-bottom : 20px;
+        padding :10px;
+        & > img {
+          width: auto;
+          height: auto;
+          max-width : 540px;
+          max-height : 240px; 
+          aspect-ratio: auto;
+          border-radius: 8px;
+          box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.08);
+        }
+      }
+      & > div.desc-area {
+        padding : 0px;
+      }
+    }
+    & > div.footer-area {
+      & > div.project-period {
+      }
+    }
+  }
+  @media screen and (max-width : 420px) {
+    & > div.content-area {
+      display: flex;
+      flex-direction: column;
+      padding : 15px;
+      & > div.img-area {
+        width : 100%;
+        height : 240px;
+        margin-bottom : 20px;
+        padding :10px;
+
+        & > img {
+          width: auto;
+          height: auto;
+          max-width : 540px;
+          max-height : 240px; 
+          aspect-ratio: auto;
+          border-radius: 8px;
+          box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.08);
+        }
       }
       & > div.desc-area {
         padding : 0px;
@@ -85,6 +132,7 @@ const Card: React.FC<IProps> = ({ item }) => {
   const {
     icon,
     title,
+    thumb,
     tags,
     desc,
     st,
@@ -95,18 +143,26 @@ const Card: React.FC<IProps> = ({ item }) => {
     <StyledCard>
       <div className="content-area">
         <div className="img-area">
-          <img src={icon} />
+          <img src={thumb} alt="thumb" />
         </div>
         <div className="header-area"></div>
         <div className="desc-area">
           <div className="title-txt">
             <span>{title}</span>
           </div>
-          <div className="tags">
-            <div>React</div>
-            <div>Webpack</div>
-            <div>Electron</div>
-          </div>
+          {!!tags && (
+            <div className="tags">
+              {
+                tags.map((el) => {
+                  return (
+                    <div>
+                      {el}
+                    </div>
+                  )
+                })
+              }
+            </div>
+          )}
           <div className="content-txt">
             Desc
           </div>
@@ -124,7 +180,7 @@ const Card: React.FC<IProps> = ({ item }) => {
           </div>
         </div>
       </div>
-    </StyledCard>
+    </StyledCard >
   )
 }
 
