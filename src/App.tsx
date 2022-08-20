@@ -7,6 +7,7 @@ import { Layout, Header } from "src/components/index";
 import {
   DetailPage,
   MainPage,
+  AboutPage,
 } from "src/pages/index";
 import {
   ROUTES
@@ -39,6 +40,11 @@ const Router = () => {
           <Wrapper>
             <DetailPage />
           </Wrapper>
+        } />
+      <Route
+        path={ROUTES.ABOUT}
+        element={
+          <AboutPage />
         } />
     </Routes>
   );

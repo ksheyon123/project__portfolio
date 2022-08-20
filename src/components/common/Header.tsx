@@ -202,6 +202,9 @@ const Header: React.FC = () => {
               Home
             </li>
             <li>
+              About
+            </li>
+            <li>
               Contact
             </li>
           </ul>

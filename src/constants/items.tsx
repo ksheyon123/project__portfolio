@@ -1,7 +1,9 @@
 import myid from "src/assets/bgs/myid.png";
 import scan from "src/assets/bgs/scan.png";
+import node from "src/assets/bgs/havah-node.png";
 import thumb_myid from "src/assets/thumb/thumb-myid.png";
 import thumb_scan from "src/assets/thumb/thumb-scan.png";
+import thumb_node from "src/assets/thumb/thumb-node.png";
 
 export const items = [
   {
@@ -32,8 +34,8 @@ export const items = [
     en: "진행중",
   },
   {
-    thumb: myid,
-    icon: thumb_myid,
+    thumb: node,
+    icon: thumb_node,
     title: "하바 노드 PC 앱",
     tags: ["React", "Electron", "Webpack-v5"],
     desc: "",
