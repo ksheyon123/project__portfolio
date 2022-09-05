@@ -7,8 +7,16 @@ const theme = {
   mono3Divider: "rgb(135, 135, 135)",
   mono6: "rgb(34, 34, 34)",
 
+  h1: {
+    fontSize: "60px"
+  },
+
+  h2: {
+    fontSize: "32px",
+  },
+
   t1: {
-    "font-size": "16px"
+    fontSize: "16px"
   }
 }
 export default theme;
